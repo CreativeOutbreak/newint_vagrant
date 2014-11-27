@@ -1,0 +1,8 @@
+.vagrant
+.vagrant*
+.DS_Store
+tmp/*
+.idea/*
+nidata/drupal7/*
+nidata/newint2.sql
+*.tgz
