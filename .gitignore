@@ -6,7 +6,7 @@ tmp/*
 nidata/drupal7/*
 
 # exclude all .sql files.
-nidata/newint2.sql
+*.sql
 
 # exclude and .tar, .tgz and .gz files
 *.tar
