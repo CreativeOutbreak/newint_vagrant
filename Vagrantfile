@@ -167,8 +167,11 @@ Vagrant.configure('2') do |config|
 
   # Before vagrant destroy is run, dump all dbs
   # bash /var/parrot-dump-databases.sh
-  # config.trigger.before :destroy do
-  #   run 'vagrant ssh -c "bash /var/parrot-dump-databases.sh && bash /vagrant/scripts/ni/pgdump.sh"'
-  # end
+  config.trigger.before :destroy do
+    run 'vagrant ssh -c "bash /var/parrot-dump-databases.sh && bash /vagrant/scripts/ni/pgdump.sh"'
+  end
+
+
+
 
 end

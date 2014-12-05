@@ -3,6 +3,8 @@
 NI_DIR="/vagrant_nidata"
 
 
+# Set up newint2 user
+cat $NI_DIR/psql.txt | sudo -u postgres psql
 
 if [ -f $NI_DIR/pgdb/newint2.sql ]; then
     # Check to see if the drupal install has been set up once and the psql db has been exported.
@@ -13,7 +15,6 @@ elif [ -f $NI_DIR/newint2.sql ]; then
     # If the above is not true, then check if the psql dump exists.
     echo "Importing psql from newint2 db dump"
     NI_SQL="$NI_DIR/newint2.sql"
-    cat $NI_DIR/psql.txt | sudo -u postgres psql
     cat $NI_SQL | sudo -u newint2 psql newint2
     cat $NI_DIR/join_views.sql | sudo -u newint2 psql newint2
 else
