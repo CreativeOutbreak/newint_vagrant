@@ -1,4 +1,4 @@
-<?php /* Smarty version 2.6.11, created on 2014-12-05 17:52:21
+<?php /* Smarty version 2.6.11, created on 2014-12-09 11:23:20
          compiled from modules/Users/login.tpl */ ?>
 <?php require_once(SMARTY_CORE_DIR . 'core.load_plugins.php');
 smarty_core_load_plugins(array('plugins' => array(array('function', 'sugar_translate', 'modules/Users/login.tpl', 42, false),array('function', 'sugar_getimagepath', 'modules/Users/login.tpl', 136, false),)), $this); ?>

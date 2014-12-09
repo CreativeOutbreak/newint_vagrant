@@ -132,7 +132,7 @@ SugarRest.test = function(o){
 
 }
 
-console = false;
+console = true;
 if(!console){
 	console = {};
 	console.log = function(){
@@ -156,14 +156,14 @@ SugarRest.logResponse = function(o){
 
 SugarRest.getServerInfo =  function(){
 	console.log('Getting Server Info');
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php' , {success:SugarRest.test, failure:SugarRest.test}, SugarRest.getRequestData('get_server_info'));
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php' , {success:SugarRest.test, failure:SugarRest.test}, SugarRest.getRequestData('get_server_info'));
 }
 
 SugarRest.getModuleFields =  function(module, fields){
 	console.log('Getting Server Info');
 	var data = [SugarRest.session, module, fields];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php' , {success:SugarRest.test, failure:SugarRest.test}, SugarRest.getRequestData('get_module_fields', m));
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php' , {success:SugarRest.test, failure:SugarRest.test}, SugarRest.getRequestData('get_module_fields', m));
 }
 
 SugarRest.login =  function(name, password, application){
@@ -173,13 +173,13 @@ SugarRest.login =  function(name, password, application){
 		password: '21232f297a57a5a743894a0e4a801fc3'
 	},'javascriptTest'];
 	m = YAHOO.lang.JSON.stringify(loginData);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php' , {success:SugarRest.test, failure:SugarRest.test}, SugarRest.getRequestData('login', m));
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php' , {success:SugarRest.test, failure:SugarRest.test}, SugarRest.getRequestData('login', m));
 }
 
 SugarRest.getUserId =  function(){
 	console.log('Getting User Id ');
 	m = YAHOO.lang.JSON.stringify(SugarRest.session);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php' , {success:SugarRest.test, failure:SugarRest.test}, SugarRest.getRequestData('get_user_id', m));
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php' , {success:SugarRest.test, failure:SugarRest.test}, SugarRest.getRequestData('get_user_id', m));
 }
 
 
@@ -189,7 +189,7 @@ SugarRest.getEntryList = function(module){
 		'value': ['id', 'email_address', 'opt_out', 'primary_address',]
 	}], 10, 0];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('get_entry_list', m));
@@ -202,7 +202,7 @@ SugarRest.getEntry = function(module, id){
 		'value': ['id', 'email_address', 'opt_out', 'primary_address',]
 	}]];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('get_entry', m));
@@ -214,7 +214,7 @@ SugarRest.getEntries = function(module, ids){
 		'value': ['id', 'email_address', 'opt_out', 'primary_address',]
 	}]];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('get_entries', m));
@@ -223,7 +223,7 @@ SugarRest.getEntries = function(module, ids){
 SugarRest.setRelationship = function(module, module_id, link_field_name, related_ids){
 	var data = [SugarRest.session, module, module_id, link_field_name, related_ids];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('set_relationship', m));
@@ -232,7 +232,7 @@ SugarRest.setRelationship = function(module, module_id, link_field_name, related
 SugarRest.setRelationships = function(modules, module_ids, link_field_names, related_ids){
 	var data = [SugarRest.session, modules, module_ids, link_field_names, related_ids];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('set_relationships', m));
@@ -241,7 +241,7 @@ SugarRest.setRelationships = function(modules, module_ids, link_field_names, rel
 SugarRest.getRelationships = function(module, module_id, link_field_name, related_module_query, related_fields, related_module_link_name_to_fields_array, deleted){
 	var data = [SugarRest.session, module, module_id, link_field_name, related_module_query, related_fields, related_module_link_name_to_fields_array, deleted];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('get_relationships', m));
@@ -250,7 +250,7 @@ SugarRest.getRelationships = function(module, module_id, link_field_name, relate
 SugarRest.setEntry = function(module, name_value_list){
 	var data = [SugarRest.session, module, name_value_list];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('set_entry', m));
@@ -259,7 +259,7 @@ SugarRest.setEntry = function(module, name_value_list){
 SugarRest.setEntries = function(module, name_value_lists){
 	var data = [SugarRest.session, module, name_value_lists];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('set_entries', m));
@@ -268,7 +268,7 @@ SugarRest.setEntries = function(module, name_value_lists){
 SugarRest.seamlessLogin = function(){
 	var data = [SugarRest.session];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('seamless_login', m));
@@ -277,7 +277,7 @@ SugarRest.seamlessLogin = function(){
 SugarRest.setNoteAttachment = function(noteObject){
 	var data = [SugarRest.session, noteObject];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('set_note_attachment', m));
@@ -286,7 +286,7 @@ SugarRest.setNoteAttachment = function(noteObject){
 SugarRest.getNoteAttachment = function(noteId){
 	var data = [SugarRest.session, noteId];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('get_note_attachment', m));
@@ -295,7 +295,7 @@ SugarRest.getNoteAttachment = function(noteId){
 SugarRest.setDocumentRevision = function(revisionObject){
 	var data = [SugarRest.session, revisionObject];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('set_document_revision', m));
@@ -304,7 +304,7 @@ SugarRest.setDocumentRevision = function(revisionObject){
 SugarRest.getDocumentRevision = function(docRevId){
 	var data = [SugarRest.session, docRevId];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('get_document_revision', m));
@@ -313,7 +313,7 @@ SugarRest.getDocumentRevision = function(docRevId){
 SugarRest.search = function(username, password, search_string, modules_to_search, offset, maxresults){
 	var data = [username, password, search_string, modules_to_search, offset, maxresults];
 	m = YAHOO.lang.JSON.stringify(data);
-	YAHOO.util.Connect.asyncRequest('POST', 'v2/rest.php', {
+	YAHOO.util.Connect.asyncRequest('POST', '../v2/rest.php', {
 		success: SugarRest.test,
 		failure: SugarRest.test
 	}, SugarRest.getRequestData('search_by_module', m));
