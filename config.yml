@@ -6,5 +6,5 @@ ip: "192.168.50.4"
 php_version: "5.3"
 mysql_version: "5.5"
 webroot_subdir: "/web"
-box_name: "Parrot"
+box_name: "newint"
 varnish_enabled: false
