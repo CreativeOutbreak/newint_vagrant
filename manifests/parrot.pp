@@ -2,7 +2,7 @@ node default {
 
   class {apt: }
   class { parrot_repos: }
-  class { solr_server:  }
+  class { elasticsearch:  }
   class { parrot_mysql:  }
   class { parrot_php:  }
   class { oh_my_zsh:  }
