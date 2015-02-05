@@ -2,7 +2,6 @@ node default {
 
   class {apt: }
   class { parrot_repos: }
-  class { elasticsearch:  }
   class { parrot_mysql:  }
   class { parrot_php:  }
   class { oh_my_zsh:  }

@@ -5,6 +5,9 @@ tmp/*
 .idea/*
 nidata/drupal7/*
 
+# exclude ni image directory
+nidata/ni_images_files/
+
 # exclude all .sql files.
 **/*.sql
 databases/drupal7.sql

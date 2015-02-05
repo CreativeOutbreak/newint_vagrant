@@ -8,7 +8,7 @@ def parse_config(
     'sites' => "sites",
     'webroot_subdir' => "",
     'databases' => "databases",
-    'memory' => '1024',
+    'memory' => '2024',
     'with_gui' => false,
     'ip' => "192.168.50.4",
     'php_version' => '5.3',
@@ -124,6 +124,9 @@ Vagrant.configure('2') do |config|
   # A quick bootstrap to get Puppet installed.
   config.vm.provision "shell", path: "scripts/bootstrap.sh"
 
+  # A quick to set up elasticsearch repo.
+  # config.vm.provision "shell", path: "scripts/ni/elasticsearch_repo.sh"
+
   # And now the meat.
   config.vm.provision :puppet do |puppet|
     puppet.manifests_path = "manifests"
@@ -167,9 +170,9 @@ Vagrant.configure('2') do |config|
 
   # Before vagrant destroy is run, dump all dbs
   # bash /var/parrot-dump-databases.sh
-  config.trigger.before :destroy do
-    run 'vagrant ssh -c "bash /var/parrot-dump-databases.sh && bash /vagrant/scripts/ni/pgdump.sh"'
-  end
+  # config.trigger.before :destroy do
+  #   run 'vagrant ssh -c "bash /var/parrot-dump-databases.sh && bash /vagrant/scripts/ni/pgdump.sh"'
+  # end
 
 
 

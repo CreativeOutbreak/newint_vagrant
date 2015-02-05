@@ -1,6 +1,6 @@
 sites: "sites"
 databases: "databases"
-memory: 1012
+memory: 2024
 with_gui: false
 ip: "192.168.50.4"
 php_version: "5.3"
