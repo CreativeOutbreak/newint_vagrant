@@ -1,0 +1,21 @@
+{
+  "LICENSE.txt": "2f7ab5eb80ec06faeb274e763f64c14e",
+  "README.md": "fdca9738db28d3a494af43ba168c5111",
+  "Rakefile": "20b80e526e351a74df2001f504e756d2",
+  "TODO.md": "4342c6f6df3f6af94301cb714061e1ab",
+  "manifests/alias.pp": "49e5b39e92c5f2c9950e45b17d26a295",
+  "manifests/cacheclear.pp": "f3fef4b18c477c38c581098dbf7dccae",
+  "manifests/config.pp": "a79144b55385b9f9dabc954fc22bcb28",
+  "manifests/extension.pp": "40ab6961027edb05d4870ad790756759",
+  "manifests/init.pp": "dec05e2f40966102a43ce708debae494",
+  "manifests/install/composer.pp": "0e3d4b3a690cdd8d84d577e4d1d93f24",
+  "manifests/install.pp": "b15432da8fe3d8db2ccd3f9ac869a991",
+  "manifests/params.pp": "97d5cef7d6d0f0a292d2f8a784480372",
+  "manifests/setup.pp": "22940cc28fa4f785282c529a6de75ec4",
+  "metadata.json": "f4587c956a0303f2ffb99f1a62d35cc1",
+  "spec/classes/init_spec.rb": "8d2e90fd56c3cdc60d52f8a9d062240e",
+  "spec/spec_helper.rb": "a55d1e6483344f8ec6963fcb2c220372",
+  "templates/alias.erb": "7bfe43e224a2a33d2be08b6cbcb87639",
+  "templates/install-versions-hash.erb": "79da08dc05771a0c6662e1a313cd4fd1",
+  "tests/init.pp": "43a865b6d4a5e4cb4ef0ed4670674d0c"
+}
